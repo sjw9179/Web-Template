@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 이 템플릿의 모든 소유는 신주원 에게 있습니다. -->
+    <!-- All ownership of this template belongs to Shin Joo-won. -->
+     <!-- 이 템플릿을 문의 없이 사용할수 없습니다. 같은 파일에 있는 README.md 파일을 확인하셔서 문의를 해주세요.
+        This template cannot be used without inquiry. Please check the README.md file in the same file and contact us. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        body{
+            margin: 0
+        }
+
+
+        header {
+            padding: 60px;
+            text-align: center;
+            background-color: #8a8aff;
+            color: black;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: row;
+            background-color: #333;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+        }
+
+        nav a:hover {
+            background-color: #8a8aff;
+            color: black;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .side {
+            flex: 30%;
+            background-color: #f1f1f1;
+            padding: 20px;
+        }
+
+        .img-box {
+            background-color: #aaa;
+            width: 100%;
+            padding: 20px;
+            
+        }
+
+        main {
+            flex: 70%;
+            background-color: white;
+            padding: 20px;
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #ddd;
+            font-size: 10px;
+        }
+        .noline {
+            text-decoration: none
+        }
+
+
+        @media  (max-width: 768px) {
+            .row, .navber {
+                flex-direction: column;
+            }
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>JuWon의 포트폴리오</h1>
+    </header>
+    <nav>
+        <a href="#project 1">프로젝트 1</a>
+        <a href="#project 2">프로젝트 2</a>
+        <a href="#project 3">프로젝트 3</a>
+        <a href="#project 4">프로젝트 4</a>
+        <a href="#pproject 5">프로젝트 5</a>
+    </nav>
+    <div class="row">
+        <aside class="side">
+            <div class="about">
+                <h2>About</h2>
+                <div class="img-box" style="height: 200px;">Image</div>
+                <p>자기소개...</p>
+                <h3>JavaScript, Html, Css</h3>
+                <div class="img-box" style="height: 60px;">Image</div>
+                <br>
+                <div class="img-box" style="height: 60px;">Image</div>
+                <br>
+                <div class="img-box" style="height: 60px;">Image</div>
+            </div>
+        </aside>
+        <main>
+            <section id="project 1">
+                <h2>프로젝트 1</h2>
+                <h5>2023.10.18</h5>
+                <div class="img-box" style="height: 200px;">Image</div>
+                <p>프로젝트 설명...</p>
+            </section> 
+            <section id="project 2">
+                <h2>프로젝트 2</h2>
+                <h5>2023.10.18</h5>
+                <div class="img-box" style="height: 200px;">Image</div>
+                <p>프로젝트 설명...</p>
+            </section>
+            <section id="project 3">
+                <h2>프로젝트 3</h2>
+                <h5>2023.10.18</h5>
+                <div class="img-box" style="height: 200px;">Image</div>
+                <p>프로젝트 설명...</p>
+            </section>
+            <section id="project 4"> 
+                <h2>프로젝트 4</h2>
+                <h5>2023.10.18</h5>
+                <div class="img-box" style="height: 200px;">Image</div>
+                <p>프로젝트 설명...</p>
+            </section>
+            <section id="project 5">
+                <h2>프로젝트 5</h2>
+                <h5>2023.10.18</h5>
+                <div class="img-box" style="height: 200px;">Image</div>
+                <p>프로젝트 설명...</p>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <h2>Copyright 2023, Design by <a href="https://www.juwon.cloud" class="noline">Shin Juwon</a></h2>
+    </footer>
+</body>
+</html>
