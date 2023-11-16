@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="ko" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.115.4">
+    <link rel="icon" href="../img/logo1.png">
+    <title>결제</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/checkout/">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="checkout.css" rel="stylesheet">
+  </head>
+  <body class="bg-body-tertiary">
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+   
+
+    
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="../img/logo1.png" alt="" width="72" height="72">
+      <h2>결제</h2>
+    </div>
+
+    <div class="row g-5">
+      <div class="col-md-5 col-lg-4 order-md-last ">
+        <div class="stk">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-primary">품목</span>
+          <span class="badge bg-primary rounded-pill">3</span>
+        </h4>
+        <p style="font-size: 15px;">여기를 꼭 한번더 확인 해 주세요..!</p>
+        <ul class="list-group mb-3 " id="list_thing">
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">크로스오버 모니터..</h6>
+              <small class="text-body-secondary ">60인치, 블랙</small>
+            </div>
+            <span class="text-body-secondary price">100</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">애플 맥북 프로..</h6>
+              <small class="text-body-secondary ">m1 max, 96gb ram, 스페이스 그레이</small>
+            </div>
+            <span class="text-body-secondary price">100</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">앱코 키보드 k65..</h6>
+              <small class="text-body-secondary ">배송비 3000원</small>
+            </div>
+            <span class="text-body-secondary price">5,800</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
+            <div class="text-success">
+              <h6 class="my-0">배송비 할인 쿠폰</h6>
+              <small>중복할인 가능</small>
+            </div>
+            <span class="text-success price">-5,000</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span>합계 (원)</span>
+            <strong id="totalValue"></strong>
+          </li>
+        </ul>
+
+        <div class="d-grid gap-2 mb-4">
+          <button class="btn btn-primary" type="button" id="code_look" onclick="code_look()">가지고 있는 쿠폰 보기</button>
+        </div>
+
+        <form class="card p-2" id="code">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="할인또는 구매 코드 (10자리)" maxlength="10" id="code_form">
+            <button type="submit" class="btn btn-secondary">등록</button>
+          </div>
+        </form>
+      </div>
+      </div>
+      <div class="col-md-7 col-lg-8" id="pay">
+        <h4 class="mb-3">배송 정보</h4>
+        <form class="needs-validation" novalidate>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">성</label>
+              <input type="text" class="form-control" id="firstName" placeholder="홍" value="" required >
+              <div class="invalid-feedback">
+                성을 옳바르게 입력하세요.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="lastName" class="form-label">이름</label>
+              <input type="text" class="form-control" id="lastName" placeholder="길동" value="" required>
+              <div class="invalid-feedback">
+                이름을 옳바르게 입력하세요.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="username" class="form-label">아이디</label>
+              <div class="input-group has-validation">
+                <span class="input-group-text">@</span>
+                <input type="text" class="form-control" id="username" placeholder="아이디를 확인하는중 오류가 발생했습니다." required disabled>
+              <div class="invalid-feedback">
+                  아이디를 확인하는중 오류가 발생했습니다.
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label">이메일(결제시 사용)<span class="text-body-secondary price">(선택)</span></label>
+              <input type="email" class="form-control" id="email" placeholder="you@example.com">
+              <div class="invalid-feedback">
+                옳바른 형식으로 입력 해주세요.
+              </div>
+            </div>
+
+
+
+
+            <div class="col-12">
+              <label for="phone" class="form-label">전화번호(배송시에만 사용)</label>
+             <input type="text" class="form-control" id="phone"  placeholder="010 xxxx xxxx(공백과 - 없이 숫자만 입력)" required>
+             <div class="invalid-feedback">
+              전화번호를 입력 해 주세요.
+            </div>
+            </div>
+
+         
+            <input type="text" id="sample2_extraAddress" placeholder="참고항목"  style="display: none;"> <!-- 참고항목은 표시하지 않음 -->
+           
+            <div id="layer" style="display:none;position:fixed;overflow:hidden;z-index:1;-webkit-overflow-scrolling:touch;">
+            <img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnCloseLayer" style="cursor:pointer;position:absolute;right:-3px;top:-3px;z-index:1" onclick="closeDaumPostcode()" alt="닫기 버튼">
+            </div>
+
+
+
+            <div class="col-12">
+              <label for="address2" class="form-label">우편번호</label>
+             <input type="text"  class="form-control" id="sample2_postcode" placeholder="주소 찾기로 채워주세요." disabled>
+
+            </div>
+           
+            <div class="col-12">
+              <label for="address2" class="form-label">주소</label>
+             <input type="text" class="form-control" id="sample2_address" placeholder="주소 찾기로 채워주세요." disabled>
+            </div>
+
+            
+           
+
+
+
+            <div class="d-grid gap-2">
+              <input type="button" onclick="sample2_execDaumPostcode()" class="btn btn-primary" value="주소 찾기">
+            </div>
+
+
+            <div class="col-12">
+              <label for="sample2_detailAddress" class="form-label">상세 주소</label>
+               <input type="text" class="form-control" id="sample2_detailAddress" placeholder="상세 주소를 입력 해 주세요  (없을시 공백)">
+
+                <div class="invalid-feedback">
+                상세주소를 입력 해 주세요.
+              </div>
+            </div>
+
+
+          </div>
+
+         <!--  <hr class="my-4">
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="same-address">
+            <label class="form-check-label" for="same-address">Shipping address is the same as my billing address</label>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="save-info">
+            <label class="form-check-label" for="save-info">Save this information for next time</label>
+          </div> -->
+
+          <hr class="my-4">
+
+          <h4 class="mb-3">결제</h4>
+
+          <div class="my-3">
+            <div class="form-check">
+              <input id="1" name="paymentMethod" type="radio" class="form-check-input" checked required value="card">
+              <label class="form-check-label" for="1">신용카드</label>
+            </div>
+            <div class="form-check">
+              <input id="2" name="paymentMethod" type="radio" class="form-check-input" required value="phone"> 
+              <label class="form-check-label" for="2">휴대전화</label>
+            </div>
+            <div class="form-check">
+              <input id="6" name="paymentMethod" type="radio" class="form-check-input" required value="rbank">
+              <label class="form-check-label" for="6">계좌이체</label>
+            </div>
+            <div class="form-check">
+              <input id="16" name="paymentMethod" type="radio" class="form-check-input" required value="naverpay">
+              <label class="form-check-label" for="16">네이버 페이</label>
+            </div>
+            <div class="form-check">
+              <input id="23" name="paymentMethod" type="radio" class="form-check-input" required value="applepay">
+              <label class="form-check-label" for="23">애플페이</label>
+            </div>
+            <div class="form-check">
+              <input id="3" name="paymentMethod" type="radio" class="form-check-input" required value="card">
+              <label class="form-check-label" for="3">해외카드(2.5% 추가 및 1% 환전 수수료 추가)</label>
+            </div>
+          </div>
+
+          <div class="row gy-3">
+            <div class="col-md-6">
+              <label for="pay_phone" class="form-label">전화번호</label>
+              <input type="text" class="form-control" id="pay_phone" placeholder="010 xxxx xxxx(공백과 - 없이 숫자만 입력)" required>
+              <small class="text-body-secondary price">결제 하시는 분의 명의로 해주세요.</small>
+              <div class="invalid-feedback">
+                전화번호를 입력 하세요.
+              </div>
+            </div>
+
+    
+
+
+          <hr class="my-4">
+          <p>현 페이지는 포트폴리오 프로젝트 페이지로 결제시 실제 결제가 진행이 되나 물건 발송 등 결제외에는 아무것도 진행되지 않음으로 주의 해 주세요.</p>
+
+          <button class="w-100 btn btn-primary btn-lg" type="submit">결제 창 열기</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="my-5 pt-5 text-body-secondary price text-center text-small">
+    <p class="mb-1">&copy; 2023 Coding Dream</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="../index.html">홈</a></li>
+      <li class="list-inline-item"><a href="../my.html">장바구니</a></li>
+      <li class="list-inline-item"><a href="#">정책</a></li>
+    </ul>
+  </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="//lite.payapp.kr/public/api/payapp-lite.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/9b2654ff74.js" crossorigin="anonymous"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="checkout.js"></script>
+
+
+  </body>
+</html>

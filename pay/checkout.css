@@ -1,0 +1,15 @@
+.container {
+  max-width: 960px;
+}
+
+
+
+@media (min-width: 768px) {
+
+  .stk {
+    position: sticky;
+    top: 50px; 
+  }
+
+ 
+}
