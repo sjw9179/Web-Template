@@ -264,7 +264,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 
 
-  PayApp.setDefault('userid',     'sjw9179');
+  PayApp.setDefault('userid',     ''); //실제 자기의 아이디를 입력 해야 합니다.
   PayApp.setDefault('shopname',   'Coding Dream');
   function payappPay(){
     var pay_phone = document.getElementById('pay_phone').value; // 결제 본인 핸드폰 번호
